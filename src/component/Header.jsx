@@ -1,17 +1,40 @@
 import React from "react";
 import { AppBar, Toolbar, styled, InputBase, Box } from "@mui/material";
 import Logo from "./images/logo.png";
+import SearchIcon from "@mui/icons-material/Search";
+
+const StyledHeader = styled(AppBar)`
+  background: lightblue;
+`;
+
+const StyledComponent = styled(Box)`
+  background-color: #004d25;
+  margin-left: 50px;
+  border-radius: 5px;
+  position: relative;
+`;
+
+const InputBox = styled(InputBase)`
+  color: inherit;
+  margin: 0 30px;
+`;
+
+const StyledIcon = styled(SearchIcon)`
+  position: absolute;
+  top: 3px;
+`;
 
 const Header = () => {
   return (
-    <AppBar sx={{ bgcolor: "lightblue" }}>
+    <StyledHeader>
       <Toolbar>
         <img src={Logo} alt="logo" style={{ width: 100 }} />
-        <Box>
-          <InputBase placeholder="Enter Search" />
-        </Box>
+        <StyledComponent>
+          <StyledIcon />
+          <InputBox placeholder="Search ...." />
+        </StyledComponent>
       </Toolbar>
-    </AppBar>
+    </StyledHeader>
   );
 };
 
