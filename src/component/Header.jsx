@@ -5,6 +5,7 @@ import SearchIcon from "@mui/icons-material/Search";
 
 const StyledHeader = styled(AppBar)`
   background: lightblue;
+  position: static;
 `;
 
 const StyledComponent = styled(Box)`
