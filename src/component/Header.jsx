@@ -25,14 +25,17 @@ const StyledIcon = styled(SearchIcon)`
   top: 3px;
 `;
 
-const Header = () => {
+const Header = ({ setText }) => {
+  const getText = (e) => {
+    setText(e.target.value);
+  };
   return (
     <StyledHeader>
       <Toolbar>
         <img src={Logo} alt="logo" style={{ width: 100 }} />
         <StyledComponent>
           <StyledIcon />
-          <InputBox placeholder="Search ...." />
+          <InputBox placeholder="Search ...." onChange={(e) => getText(e)} />
         </StyledComponent>
       </Toolbar>
     </StyledHeader>
